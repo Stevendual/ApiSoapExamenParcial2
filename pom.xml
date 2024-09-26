@@ -1,73 +1,231 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>principal</groupId>
-	<artifactId>ApiSoapBancoGT</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>ApiSoapExamenParcial2</name>
-	<description>ApiSoapExamenParcial2</description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
-	<properties>
-		<java.version>17</java.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>principal</groupId>
+    <artifactId>ApiSoapBancoGT</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>ApiSoapExamenParcial2</name>
+    <description>ApiSoapExamenParcial2</description>
+    <url/>
+    <licenses>
+        <license/>
+    </licenses>
+    <developers>
+        <developer/>
+    </developers>
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <!-- Spring Web -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!-- Swagger -->
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-boot-starter</artifactId>
+        <version>3.0.0</version>
+    </dependency>
+
+    <!-- Log4j -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-log4j2</artifactId>
+    </dependency>
+
+
+    <!-- JUnit para pruebas -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+
+
+    <!-- Dependencias SOAP -->
+         <!-- JAX-WS API -->
+    <dependency>
+        <groupId>jakarta.xml.ws</groupId>
+        <artifactId>jakarta.xml.ws-api</artifactId>
+        <version>3.0.1</version>
+    </dependency>
+
+    <!-- JAX-WS Runtime (incluye wsimport) -->
+    <dependency>
+        <groupId>com.sun.xml.ws</groupId>
+        <artifactId>jaxws-rt</artifactId>
+        <version>3.0.1</version>
+    </dependency>
+
+        <!-- JAX-WS API -->
+    <dependency>
+        <groupId>jakarta.xml.ws</groupId>
+        <artifactId>jakarta.xml.ws-api</artifactId>
+        <version>3.0.1</version>
+    </dependency>
+
+    <!-- JAX-WS Implementation -->
+    <dependency>
+        <groupId>com.sun.xml.ws</groupId>
+        <artifactId>jaxws-rt</artifactId>
+        <version>3.0.1</version>
+    </dependency>
+    <!-- Esta parte la puedes generar con wsimport -->
+
+         <!-- Dependencias JAXB para manejar el error javax.xml.bind.annotation -->
+    <dependency>
+        <groupId>javax.xml.bind</groupId>
+        <artifactId>jaxb-api</artifactId>
+        <version>2.3.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-core</artifactId>
+        <version>2.3.0.1</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-impl</artifactId>
+        <version>2.3.3</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.glassfish.jaxb</groupId>
+        <artifactId>jaxb-runtime</artifactId>
+        <version>2.3.2</version>
+    </dependency>
+        <dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.2.3</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-slf4j-impl</artifactId>
+    <version>2.14.1</version>
+</dependency>
+
+
+
+    <!-- JAX-WS API -->
+    <dependency>
+        <groupId>jakarta.xml.ws</groupId>
+        <artifactId>jakarta.xml.ws-api</artifactId>
+        <version>3.0.1</version>
+    </dependency>
+
+    <!-- JAX-WS Implementation (incluye el runtime para wsimport) -->
+    <dependency>
+        <groupId>com.sun.xml.ws</groupId>
+        <artifactId>jaxws-rt</artifactId>
+        <version>3.0.1</version>
+    </dependency>
+
+    <!-- JAXB API -->
+    <dependency>
+        <groupId>javax.xml.bind</groupId>
+        <artifactId>jaxb-api</artifactId>
+        <version>2.3.1</version>
+    </dependency>
+
+    <!-- JAXB Runtime Implementation -->
+    <dependency>
+        <groupId>org.glassfish.jaxb</groupId>
+        <artifactId>jaxb-runtime</artifactId>
+        <version>2.3.2</version>
+    </dependency>
+
+    <!-- JAXB Core -->
+    <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-core</artifactId>
+        <version>2.3.0.1</version>
+    </dependency>
+
+    <!-- JAXB Implementation -->
+    <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-impl</artifactId>
+        <version>2.3.3</version>
+    </dependency>
+</dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>jaxws-maven-plugin</artifactId>
+            <version>2.6</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>wsimport</goal>
+                    </goals>
+                    <configuration>
+                        <wsdlUrls>
+                            <wsdlUrl>http://www.banguat.gob.gt/variables/ws/TipoCambio.asmx?WSDL</wsdlUrl>
+                        </wsdlUrls>
+                        <packageName>com.banguat.soap</packageName>
+                        <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+        </plugins>
+    </build>
 
 </project>
